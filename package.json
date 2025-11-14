@@ -1,0 +1,22 @@
+{
+  "name": "smol-code-use-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "mastra": "^0.18.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@mastra/core": "^0.24.0",
+    "zod": "^4.1.12"
+  }
+}

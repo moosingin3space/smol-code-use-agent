@@ -1,7 +1,7 @@
-import { friendli } from "@friendliai/ai-provider";
 import { Agent } from "@mastra/core/agent";
 
 import { searchTool } from "../tools/perplexity-tools";
+import { model } from "../model";
 
 export const websearchAgent = new Agent({
   name: "websearch-agent",
@@ -12,6 +12,6 @@ in order to prepare useful information to answer the user's question.
 
 You should produce a small summary of your findings and a few citations.
   `,
-  model: friendli("meta-llama-3.3-70b-instruct"),
+  model,
   tools: [searchTool],
 });

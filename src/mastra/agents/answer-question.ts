@@ -1,10 +1,10 @@
-import { friendli } from "@friendliai/ai-provider";
 import { Agent } from "@mastra/core/agent";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
 
 import { websearchAgent } from "../agents/websearch-agent";
 import { pyodideAgent } from "../agents/pyodide-agent";
+import { model } from "../model";
 
 export const answerAgent = new Agent({
   name: "answer-agent",
@@ -19,12 +19,12 @@ programming agent. Use these in combination with each other in order to create a
 answer to the user's query. Note that it is almost always better to incorporate Python code
 instead of purely relying on web search.
 
-You must make use of at least one of these agents in order to produce an answer.
+You should make use of both agents if possible.
 
 Always respond succinctly, with verified facts. If there is any uncertainty, you must clarify
 that uncertainty and provide a range of possible answers.
   `,
-  model: friendli("meta-llama-3.3-70b-instruct"),
+  model,
   agents: { websearchAgent, pyodideAgent },
   memory: new Memory({
     storage: new LibSQLStore({

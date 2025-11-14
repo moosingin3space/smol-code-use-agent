@@ -1,7 +1,7 @@
-import { friendli } from "@friendliai/ai-provider";
 import { Agent } from "@mastra/core/agent";
 
 import { runPyodideTool } from "../tools/run-pyodide";
+import { model } from "../model";
 
 export const pyodideAgent = new Agent({
   name: "pyodide-agent",
@@ -14,6 +14,6 @@ export const pyodideAgent = new Agent({
 5. Deliver the final answer to the user, noting any assumptions, limitations, or recommended follow-up steps.
 
   `,
-  model: friendli("meta-llama-3.3-70b-instruct"),
+  model,
   tools: [runPyodideTool],
 });

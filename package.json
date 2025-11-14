@@ -20,6 +20,8 @@
   "dependencies": {
     "@friendliai/ai-provider": "^0.3.2",
     "@mastra/core": "^0.24.0",
+    "@mastra/libsql": "^0.16.2",
+    "@mastra/memory": "^0.15.11",
     "@perplexity-ai/perplexity_ai": "^0.16.0",
     "ai": "^5.0.93",
     "pyodide": "^0.29.0",

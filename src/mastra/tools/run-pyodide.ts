@@ -9,7 +9,11 @@ export const runPyodideTool = createTool({
     code: z.string().describe("Python code to run"),
   }),
   outputSchema: z.object({
-    result: z.string().describe("The result of the Python code"),
+    result: z
+      .string()
+      .describe(
+        `The result of the Python code, including a main() function that we can invoke.`,
+      ),
     success: z
       .boolean()
       .describe("Whether the Python code executed successfully"),

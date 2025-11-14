@@ -30,14 +30,13 @@ export const searchTool = createTool({
   execute: async ({ context }) => {
     const { query } = context;
 
-    const search = await client.search.create({
-      query,
-      max_results: 10,
-    });
-
     let results;
     let success = false;
     try {
+      const search = await client.search.create({
+        query,
+        max_results: 10,
+      });
       results = search.results.map((result) => ({
         pageTitle: result.title,
         snippet: result.snippet,
